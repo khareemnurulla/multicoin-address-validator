@@ -1,5 +1,5 @@
 var cbor = require('cbor-js');
-var CRC = require('crc');
+var CRC32 = require('crc/crc32');
 var base58 = require('./crypto/base58');
 var BIP173Validator = require('./bip173_validator')
 
@@ -27,7 +27,7 @@ function isValidAddressV1(address) {
     }
 
     // get crc of the payload
-    var crc = CRC.crc32(tagged);
+    var crc = CRC32(tagged);
 
     return crc == validCrc;
 }
