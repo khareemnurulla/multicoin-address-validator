@@ -1,4 +1,5 @@
 var currencies = require('./currencies');
+var ADAValidator = require('./ada_validator');
 
 var DEFAULT_CURRENCY_NAME = 'bitcoin';
 
@@ -21,5 +22,6 @@ module.exports = {
     },
     findCurrency: function(symbol) {
         return currencies.getByNameOrSymbol(symbol) || null ;
-    }
+    },
+    ADAValidator,
 };
